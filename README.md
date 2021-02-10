@@ -8,16 +8,15 @@ Especially useful for logging and alerting, supports three logging levels `Error
 
 Add Slacker to your Gemfile
 
-    gem 'slackert', git: git@github.com:braze-inc/braze-growth-shares-slackert.git
+    gem 'slackert'
 
 Then
 
     $ bundle install
 
-<!-- TODO: Once posted to rubygems -->
-<!-- Or install it yourself as:
+Or install it yourself as:
 
-    $ gem install slackert -->
+    $ gem install slackert
 
 ## Usage
 
@@ -113,13 +112,15 @@ Templates optimize the process of creating and sending alerts by providing layou
 #### Examples
 
 #### Job Executed
+
 <br>
-<img src="./screenshots/job-executed.png" width="600" height="309">
+<img src="https://raw.githubusercontent.com/braze-inc/braze-growth-shares-slackert/master/screenshots/job-executed.png" width="600" height="309">
 <br>
 
 #### Job Error
+
 <br>
-<img src="./screenshots/job-error.png" width="600" height="281">
+<img src="https://raw.githubusercontent.com/braze-inc/braze-growth-shares-slackert/master/screenshots/job-error.png" width="600" height="281">
 <br>
 
 ### Logging Level
