@@ -53,7 +53,10 @@ module Slackert
       req = base_post_req
       req.body = content.to_json
       res = @https.request(req)
-      puts "Message sending unsuccesful (Code: #{res.code}, Message: #{res.message})" if res.code != '200'
+
+      if res.code != '200'
+        puts "Slackert::Slack message sending unsuccesful (Code: #{res.code}, Message: #{res.read_body})"
+      end
     end
 
     def base_post_req
