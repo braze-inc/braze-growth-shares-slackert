@@ -89,6 +89,8 @@ module Slackert
       # @param type [String] can be either mrkdwn or plain_text
       #
       def add_section_text(message, type = 'mrkdwn')
+        raise ArgumentError, 'Maximum number of characters in text exceeded' if message.length > 3000
+
         @text = {
           'type': type,
           'text': message
@@ -103,7 +105,8 @@ module Slackert
       # @raise [RuntimeError] if maximum capacity of 10 field objects has been reached
       #
       def add_field_text(message, type = 'mrkdwn')
-        raise 'Maximum field text objects has been reached.' if @fields.length == 10
+        raise StandardError, 'Maximum field text objects has been reached.' if @fields.length == 10
+        raise ArgumentError, 'Maximum number of characters in text exceeded' if message.length > 2000
 
         @fields.push(
           {
